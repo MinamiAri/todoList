@@ -1,0 +1,261 @@
+.content {
+    width: 850px;
+    margin: 80px auto;
+}
+
+.top__ttl {
+    margin-bottom: 20px;
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+}
+
+.top__post {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.top__input {
+    width: 70%;
+    padding: 0 5px;
+    line-height: 1.5;
+    font-size: 20px;
+    border-radius: 4px;
+    border: solid 1px rgb(64, 119, 182);
+}
+
+.top__day {
+    width: 17%;
+    font-size: 15px;
+    border: solid 1px #333;
+}
+
+.top__btn {
+    width: 8%;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #fff;
+    background: #4077b6;
+    border: solid 1px rgb(64, 119, 182);
+}
+
+.top__sort {
+    display: block;
+    width: 12.5%;
+    height: 25px;
+    margin-left: auto;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+.top__error {
+    margin-top: -10px;
+    color: #ff0022;
+}
+
+.heading {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: solid 1px rgb(216, 216, 216);
+}
+
+.heading__id,
+.heading__task,
+.heading__day,
+.heading__status {
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: #113968;
+}
+
+.heading__id {
+    width: 45.5px;
+    margin-right: 8.25px;
+}
+
+.heading__task {
+    width: 380.5px;
+    margin-right: 8.25px;
+}
+
+.heading__day {
+   width: 110px;
+   margin-right: 8.25px;
+}
+
+.heading__status {
+    width: 280px;
+}
+.item__ttl {
+    width: 380.5px;
+    font-size: 15px;
+    line-height: 30px;
+    border-right: solid 1px rgb(216, 216, 216);
+}
+
+.item__day {
+   width: 110px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.item__status {
+    width: 105px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+    box-sizing: border-box;
+}
+
+.item__status:hover {
+    opacity: .7;
+}
+
+.item__status.before {
+    color: #4077b6;
+    border: solid 1px #4077b6;
+}
+
+.item__status.now {
+    color: #fff;
+    background: #4077b6;
+}
+
+.item__status.finish {
+    color: #fff;
+    border: none;
+    background: #ce394d;
+}
+
+.item__delete {
+    width: 108px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+    color: #ff0022;
+    border: solid 1px #ff0022;
+}
+
+.item__delete:hover {
+    color: #fff;
+    background: #ff0022;
+}
+
+.all-delete {
+    width: 12.5%;
+    height: 35px;
+    margin-left: auto;
+    margin-bottom: 15px;
+    font-size: 14px;
+    line-height: 35px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 4px;
+    user-select: none;
+    cursor: pointer;
+    color: #fff;
+    background: #ff0022;
+}
+
+.all-delete.inactive {
+    background: #bebebe;
+}
+
+.item__num {
+    width: 40.5px;
+    font-size: 15px;
+    line-height: 30px;
+    text-align: center;
+    border-right: solid 1px rgb(216, 216, 216);
+}
+
+.item__edit {
+    width: 70px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 5px;
+    border: solid 1px #333;
+}
+
+.item__edit:hover {
+    opacity: .7;
+    cursor: pointer;
+}
+
+.form__item {
+    display: flex;
+}
+
+.form__outer {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(116, 116, 116, 0.5);
+}
+
+.form__outer.formEditActive {
+    display: block;
+}
+
+.form__box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 360px;
+    padding: 50px;
+    background: #fff;
+}
+
+.form__item {
+    margin-bottom: 15px;
+}
+
+.form__ttl {
+    margin-right: 15px;
+    font-size: 20px;
+}
+
+.form__save {
+    width: 150px;
+    margin-right: 15px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+    color: #fff;
+    background: #3487e6;
+}
+
+.form__cancel {
+    width: 150px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+    color: #fff;
+    background: #e63434;
+}

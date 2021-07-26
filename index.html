@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Todoリスト</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <div id="app" class="content">
+      <div class="top">
+        <h1 class="top__ttl">Todoリスト</h1>
+        <form class="top__post" @submit.prevent="addItem">
+          <input class="top__input" v-model="newItem" type="text" placeholder="タスクを追加してください。">
+          <input class="top__day" v-model="newDay" v-bind:min="today" type="date">
+          <input type="submit" class="top__btn" value="追加">
+        </form>
+        <p v-if="errors.length" class="top__error">
+          {{ errors.join('\n') }}
+        </p>
+      </div>
+
+      <div class="all-delete inactive" @click="allDeleteBtn">
+        すべて削除
+      </div>
+
+      <ul class="heading">
+        <li class="heading__id">ID</li>
+        <li class="heading__task">タスク</li>
+        <li class="heading__day">期日</li>
+        <li class="heading__status">状態</li>
+      </ul>
+      <!-- タスク一覧 -->
+      <ul class="list" v-if="items.length">
+        <li class="item" v-for="(todo,index) in items" v-bind:key="index">
+          <p class="item__num"> 
+            {{ index + 1 }}
+          </p>
+          <p class="item__ttl">
+            {{ todo.title }}
+          </p>
+          <p class="item__day">
+            {{ todo.today }}
+          </p>
+          <div class="item__edit" v-on:click="editBtn(index)">
+            編集
+          </div>
+          <div class="item__status before" @click="statusBtn(index)">
+            未着手
+          </div>
+          <div class="item__delete" @click="deleteBtn(index)">
+            削除
+          </div>
+        </li>
+      </ul>
+      <ul v-else>
+        <li>タスクを追加してみよう！</li>
+      </ul>
+      <!-- 編集フォーム -->
+      <div class="form__outer" v-bind:class="{formEditActive:formEdit}">
+        <div class="form__box">
+          <ul class="form__list">
+            <li class="form__item">
+              <p class="form__ttl">タスク</p>
+              <input type="text" v-model="formTitle">
+            </li>
+            <li class="form__item">
+              <p class="form__ttl">期日</p>
+              <input v-model="formDay" v-bind:min="today" type="date">
+            </li>
+            <li class="form__item">
+              <div class="form__save" v-on:click="saveBtn">
+                保存
+              </div>
+              <div class="form__cancel" v-on:click="cancleBtn">
+                キャンセル
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
